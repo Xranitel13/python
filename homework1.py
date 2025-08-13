@@ -7,13 +7,16 @@ def string_to_date(date_string):
     return datetime.strptime(date_string, "%Y-%m-%d").date()
 
 def get_days_from_today(date):
-    datatime = string_to_date(date)
+    try:
+        datatime = string_to_date(date)
+    except:
+        return "Wrong format of date. Use 'yyyy-mm-dd'"
     today = datetime.today().date()
-    diff = (datatime-today).days
+    diff = (datatime-today).daysS
     return diff
 
 
-print(get_days_from_today("2026-01-01"))
+print(get_days_from_today("2026.01-01"))
 
 
 
@@ -21,7 +24,7 @@ print(get_days_from_today("2026-01-01"))
 #zadanie 2:
 
 def get_numbers_ticket(min, max, quantity):
-    if min<1 or max>1000 or min>max or quantity<min or quantity>max:
+    if min<1 or max>1000 or min>max or quantity==0:
         return []
     return sorted(random.sample(range(min, max+1), quantity))
 

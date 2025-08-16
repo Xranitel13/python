@@ -19,8 +19,6 @@ def get_days_from_today(date):
 print(get_days_from_today("2026-01-01"))
 
 
-
-
 # zadanie 2:
 
 def get_numbers_ticket(min, max, quantity):

@@ -12,22 +12,22 @@ def get_days_from_today(date):
     except:
         return "Wrong format of date. Use 'yyyy-mm-dd'"
     today = datetime.today().date()
-    diff = (datatime-today).daysS
+    diff = (datatime-today).days
     return diff
 
 
-print(get_days_from_today("2026.01-01"))
+print(get_days_from_today("2026-01-01"))
 
 
 
 
-#zadanie 2:
+# zadanie 2:
 
 def get_numbers_ticket(min, max, quantity):
-    if min<1 or max>1000 or min>max or quantity==0:
+    if min<1 or max>1000 or min>max or quantity==0 or max-min<quantity:
         return []
     return sorted(random.sample(range(min, max+1), quantity))
 
 
-lottery_numbers = get_numbers_ticket(1, 5, 2)
+lottery_numbers = get_numbers_ticket(10, 11, 2)
 print("Ваші лотерейні числа:", lottery_numbers)
